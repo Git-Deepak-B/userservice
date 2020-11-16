@@ -1,5 +1,6 @@
 package com.test.userservice.service;
 
+import com.test.userservice.config.Constants;
 import com.test.userservice.dto.RegisterUserRequestDTO;
 import com.test.userservice.model.Role;
 import com.test.userservice.model.User;
@@ -72,6 +73,10 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public ResponseEntity<?> deleteUser(String username) {
+        if (username.equals(Constants.ADMIN_USERNAME)) {
+            return new ResponseEntity<>("Cannot delete admin user", HttpStatus.BAD_REQUEST);
+        }
+
         Optional<User> user = userRepository.findByUsername(username);
         if (user.isPresent()) {
             userRepository.delete(user.get());
