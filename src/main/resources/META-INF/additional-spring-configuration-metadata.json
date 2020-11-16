@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "app.JwtSecret",
+      "type": "java.lang.String",
+      "description": "contains jwt secret key."
+    },
+    {
+      "name": "app.JwtExpirationMs",
+      "type": "java.lang.String",
+      "description": "contains token expiration time in MS."
+    }
+  ]
+}
