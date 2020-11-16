@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "fdd0524d-fb7c-40cd-a0f8-2c2ee5c944e5",
+		"name": "User Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/fetchMe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYwNTU0MTQyOSwiZXhwIjoxNjA1NjI3ODI5fQ.7GgX4_fjCLUm3S7Eo8NsvvZi1w7ku4L9teYBEFD83DiXe-qNmNXFu4rbl67F_Yf2fGNI19CJSM66U3iR-H9-xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/fetchMe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"fetchMe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYwNTU0MTQyOSwiZXhwIjoxNjA1NjI3ODI5fQ.7GgX4_fjCLUm3S7Eo8NsvvZi1w7ku4L9teYBEFD83DiXe-qNmNXFu4rbl67F_Yf2fGNI19CJSM66U3iR-H9-xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/createUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYwNTU0NzA2MywiZXhwIjoxNjA1NjMzNDYzfQ.uPyKQboxGWMcJ4daro8WRYQONL91AgNKUn4l2OlbTGOGfitmB2QQT_bjaMgRmO6NmiwZgKRRDL7MMLcKlYYt-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user\",\n    \"firstName\": \"user\",\n    \"lastName\": \"user\",\n    \"email\": \"user@userservice.com\",\n    \"password\": \"user\",\n    \"roleList\": [\"ROLE_USER\"],\n    \"enabled\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/userList",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNjA1NTQ4ODYwLCJleHAiOjE2MDU2MzUyNjB9.5MG-c4jhTOAQv-G1IkfiasWZE8nWx-QrgV-EAWhso1Rx9iYPFUmzFiB1OrQa322NphjmxjAIsvCFeF39fS-jXQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/userList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"userList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/admin/deleteUser/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYwNTU1MTQ4OSwiZXhwIjoxNjA1NjM3ODg5fQ.Exm0LKOhfZudnGL5h5AAW4FTOFxMRl74OYmAE_qEvpOh67lN6x0PIrmMa1G5CKgRkIEkkIZVtxTdKSPHztp3Uw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/admin/deleteUser/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"deleteUser",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYwNTU1MTQ4OSwiZXhwIjoxNjA1NjM3ODg5fQ.Exm0LKOhfZudnGL5h5AAW4FTOFxMRl74OYmAE_qEvpOh67lN6x0PIrmMa1G5CKgRkIEkkIZVtxTdKSPHztp3Uw",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
